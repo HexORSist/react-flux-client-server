@@ -36,6 +36,8 @@ app.use(require('./server/anonymous-routes'));
 app.use(require('./server/protected-routes'));
 app.use(require('./server/user-routes'));
 
+app.use('/build', express.static(process.cwd() + '/build'));
+
 var port = process.env.PORT || 3001;
 
 http.createServer(app).listen(port, function (err) {

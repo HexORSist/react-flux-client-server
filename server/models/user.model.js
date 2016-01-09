@@ -1,7 +1,9 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
-mongoose.connect('mongodb://localhost:27017/users');
+var MONGO_URI='mongodb://localhost:27017/users';
+
+mongoose.connect(MONGO_URI);
 
 var userSchema = new Schema({
   username: String,
